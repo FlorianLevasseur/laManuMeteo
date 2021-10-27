@@ -39,20 +39,6 @@ ul {
     background-color: black;
 }
 
-.divH {
-    height: 2rem;
-    width: 5rem;
-    background: url("img/fav.png") no-repeat;
-    background-size: contain;
-}
-
-.divH:active {
-    height: 2rem;
-    width: 5rem;
-    background: url("img/favOK.png") no-repeat;
-    background-size: contain;
-}
-
 @media screen and (max-width: 992px) {
     .container {
         background-color: transparent;
@@ -111,4 +97,17 @@ ul {
         background-color: red;
     }
 
+    .divH {
+        height: 2rem;
+        width: 5rem;
+        background: url("img/fav.png") no-repeat;
+        background-size: contain;
+    }
+
+    .divH:active {
+        height: 2rem;
+        width: 5rem;
+        background: url("img/favOK.png") no-repeat;
+        background-size: contain;
+    }
 }
