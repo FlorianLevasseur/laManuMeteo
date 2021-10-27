@@ -1,0 +1,114 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: url("img/background.jpg") no-repeat;    
+    background-size: cover;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #212529;
+    color: white;
+}
+
+select {
+    width: 40%;
+    opacity: 60%;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 7px;
+}
+
+.miniLogo {
+    width: 2rem;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.marge {
+    margin-top: 3rem;
+}
+
+.line {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+.divH {
+    height: 2rem;
+    width: 5rem;
+    background: url("img/fav.png") no-repeat;
+    background-size: contain;
+}
+
+.divH:active {
+    height: 2rem;
+    width: 5rem;
+    background: url("img/favOK.png") no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        background-color: transparent;
+    }
+    
+    .backG {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 7px;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        width: 90%;
+    }
+
+    .backG2 {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 7px;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        width: 99%;
+    }
+
+    .miniLogo {
+        width: 1rem;
+        height: auto;
+    }
+
+    .headTitle {
+        color: white;
+    }
+
+    select.localisation, select.date {
+        background-color: transparent;
+        border: none;
+        color: white;
+        opacity: 1;
+    }
+
+    .localIcon {
+        height: 2rem;
+        width: auto;
+    }
+
+    nav.navColor {
+        background-color: transparent;
+    }
+
+    select.prevision {
+        width: 70%;
+    }
+
+    .marge {
+        margin-top: 0;
+    }
+
+    .heart:active {
+        background-color: red;
+    }
+
+}
