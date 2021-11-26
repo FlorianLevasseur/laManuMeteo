@@ -72,11 +72,11 @@ fetch("https://api.openweathermap.org/data/2.5/forecast?q=le%20havre&appid=6f1e6
         })
     })
 
-    document.getElementById("myDates").addEventListener("click", () => {
+    document.getElementById("myDates").addEventListener("change", () => {
         showMeteo(data, (Number(document.getElementById("myDates").value) - 1) * 8,3);
     })
 
-    document.getElementById("myPrev").addEventListener("click", () => {
+    document.getElementById("myPrev").addEventListener("change", () => {
         if(document.getElementById("myPrev").value == 1)
             showMeteo(data,0,3)
         else if(document.getElementById("myPrev"))
