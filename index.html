@@ -36,9 +36,9 @@
                 </ul>
                 <form class="d-flex">
                     <input type="search" class="form-control me-2" placeholder="Rechercher une ville"
-                        aria-label="Search">
-                    <button class="btn bg-secondary text-white" type="button" id="button-addon2"><i
-                            class="bi bi-search"></i></button>
+                        aria-label="Search" id="searchWord">
+                    <button class="btn bg-secondary text-white" type="button" id="searchButton"><i
+                            class="bi bi-search" ></i></button>
                 </form>
 
             </div>
@@ -52,7 +52,7 @@
                 <div class="d-flex">
                     <img class="d-lg-none d-block localIcon" src="img/localisation-white.png" alt="fleche de localisation">
                     <select class="form-select fw-bold localisation" aria-label="Default select example">
-                    <option value="1">Le Havre</option>
+                    <option value="1" id="myCity">Le Havre</option>
                     <option value="2">Bolbec</option>
                     <option value="3">Fécamp</option>
                     <option value="4">Harfleur</option>
@@ -69,7 +69,7 @@
 
             <div class="col-lg-4 col-6 text-white">
                 <span class="d-none d-lg-block">Choix de la date :</span>
-                <select class="form-select fw-bold date" aria-label="Default select example">
+                <select class="form-select fw-bold date" aria-label="Default select example" id="myDates">
                     <option value="1">26 oct. 2021</option>
                     <option value="2">27 oct. 2021</option>
                     <option value="3">28 oct. 2021</option>
@@ -88,14 +88,14 @@
                         MATIN
                     </div>
                     <div class="col-lg-4 col-3 h3 fw-bold text-white m-auto text-center">
-                        <p class="m-0 p-0">2°</p>
-                        <img src="img/cloudSun.png" alt="Soleil et Nuage">
+                        <p class="m-0 p-0" id="tempMorning">2°</p>
+                        <img src="img/cloudSun.png" alt="Soleil et Nuage" id="morning">
                     </div>
                     <div class="col-lg-4 col-5 fw-bold text-white m-auto">
                         <ul>
-                            <li class="pb-2"><img class="miniLogo" src="img/uv.png" alt="logo uv"> 2</li>
-                            <li class="pb-2"><img class="miniLogo" src="img/wind.png" alt="logo vent"> 30km/h</li>
-                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
+                            <li class="pb-2"><img class="miniLogo" src="img/uv.png" alt="logo uv"> ?</li>
+                            <li class="pb-2" id="windMorning"><img class="miniLogo" src="img/wind.png" alt="logo vent"> 30km/h</li>
+                            <li id="humidMorning"><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
                         </ul>
                     </div>
                 </div>
@@ -107,14 +107,14 @@
                         APRES-MIDI
                     </div>
                     <div class="col-lg-4 col-3 h3 fw-bold text-white m-auto text-center">
-                        <p class="m-0 p-0">2°</p>
-                        <img src="img/cloudSun.png" alt="Soleil et Nuage">
+                        <p class="m-0 p-0" id="tempAfternoon">2°</p>
+                        <img src="img/cloudSun.png" alt="Soleil et Nuage" id="afternoon">
                     </div>
                     <div class="col-lg-4 col-5 fw-bold text-white m-auto">
                         <ul>
-                            <li class="pb-2"><img class="miniLogo" src="img/uv.png" alt="logo uv"> 2</li>
-                            <li class="pb-2"><img class="miniLogo" src="img/wind.png" alt="logo vent"> 30km/h</li>
-                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
+                            <li class="pb-2"><img class="miniLogo" src="img/uv.png" alt="logo uv"> ?</li>
+                            <li class="pb-2" id="windAfternoon"><img class="miniLogo" src="img/wind.png" alt="logo vent"> 30km/h</li>
+                            <li id="humidAfternoon"><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
                         </ul>
                     </div>
                 </div>
@@ -126,14 +126,14 @@
                         SOIR
                     </div>
                     <div class="col-lg-4 col-3 h3 fw-bold text-white m-auto text-center">
-                        <p class="m-0 p-0">2°</p>
-                        <img src="img/cloudSun.png" alt="Soleil et Nuage">
+                        <p class="m-0 p-0" id="tempEvening">2°</p>
+                        <img src="img/cloudSun.png" alt="Soleil et Nuage" id="evening">
                     </div>
                     <div class="col-lg-4 col-5 fw-bold text-white m-auto">
                         <ul>
-                            <li class="pb-2"><img class="miniLogo" src="img/uv.png" alt="logo uv"> 2</li>
-                            <li class="pb-2"><img class="miniLogo" src="img/wind.png" alt="logo vent"> 30km/h</li>
-                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
+                            <li class="pb-2"><img class="miniLogo" src="img/uv.png" alt="logo uv"> ?</li>
+                            <li class="pb-2" id="windEvening"><img class="miniLogo" src="img/wind.png" alt="logo vent"> 30km/h</li>
+                            <li id="humidEvening"><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
                         </ul>
                     </div>
                 </div>
@@ -144,23 +144,26 @@
     <div class="container pt-4">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <select class="form-select fw-bold mb-5 prevision m-auto" aria-label="Default select example">
+                <select class="form-select fw-bold mb-5 prevision m-auto" aria-label="Default select example" id="myPrev">
                     <option value="1">Prévisions sur 3 jours</option>
                     <option value="2">Prévisions sur 5 jours</option>
                     <option value="3" class="d-lg-none d-block">Aujourd'hui</option>
                 </select>
-                <div class="row backG m-auto mb-3">
-                    <div class="col-lg-3 col-5 h5 fw-bold text-white m-auto">
+                <div id="doPrev">
+
+                </div>
+                <!-- <div class="row backG m-auto mb-3">
+                    <div class="col-lg-3 col-5 h5 fw-bold text-white m-auto" id="prev1">
                         Lundi
                     </div>
-                    <div class="col-lg-6 col-3 h3 fw-bold text-white m-auto">
+                    <div class="col-lg-6 col-3 h3 fw-bold text-white m-auto" id="img1">
                         <img class="img-fluid" src="img/snow.png" alt="Neige">
                     </div>
                     <div class="col-lg-2 col-4 fw-bold text-white text-center m-auto">
                         <ul class="p-0 mb-0">
-                            <li class="m-auto"><span class="text-info">-8°</span> | <span class="text-danger">2°</span>
+                            <li class="m-auto"><span class="text-info" id="temp1">-8°</span> | <span class="text-danger">2°</span>
                             </li>
-                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
+                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité" id="humid1"> 20%</li>
                         </ul>
                     </div>
                     <div class="d-none d-lg-block col-lg-1 m-auto">
@@ -171,17 +174,17 @@
                 <div class="d-none d-lg-block line mt-3 mb-3"></div>
 
                 <div class="row backG m-auto mb-3">
-                    <div class="col-lg-3 col-5 h5 fw-bold text-white m-auto">
+                    <div class="col-lg-3 col-5 h5 fw-bold text-white m-auto" id="prev2">
                         Mardi
                     </div>
-                    <div class="col-lg-6 col-3 h3 fw-bold text-white m-auto">
+                    <div class="col-lg-6 col-3 h3 fw-bold text-white m-auto" id="img2">
                         <img class="img-fluid" src="img/snow.png" alt="Neige">
                     </div>
                     <div class="col-lg-2 col-4 fw-bold text-white text-center m-auto">
                         <ul class="p-0 mb-0">
-                            <li class="m-auto"><span class="text-info">-8°</span> | <span class="text-danger">2°</span>
+                            <li class="m-auto" id="temp2"><span class="text-info">-8°</span> | <span class="text-danger">2°</span>
                             </li>
-                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
+                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité" id="humid2"> 20%</li>
                         </ul>
                     </div>
                     <div class="d-none d-lg-block col-lg-1 m-auto">
@@ -192,23 +195,23 @@
                 <div class="d-none d-lg-block line mt-3 mb-3"></div>
 
                 <div class="row backG m-auto mb-3">
-                    <div class="col-lg-3 col-5 h5 fw-bold text-white m-auto">
+                    <div class="col-lg-3 col-5 h5 fw-bold text-white m-auto" id="prev3">
                         Mercredi
                     </div>
-                    <div class="col-lg-6 col-3 h3 fw-bold text-white m-auto">
+                    <div class="col-lg-6 col-3 h3 fw-bold text-white m-auto" id="img3">
                         <img class="img-fluid" src="img/snow.png" alt="Neige">
                     </div>
                     <div class="col-lg-2 col-4 fw-bold text-white text-center m-auto">
                         <ul class="p-0 mb-0">
-                            <li class="m-auto"><span class="text-info">-8°</span> | <span class="text-danger">2°</span>
+                            <li class="m-auto"><span class="text-info" id="temp3">-8°</span> | <span class="text-danger">2°</span>
                             </li>
-                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité"> 20%</li>
+                            <li><img class="miniLogo" src="img/humidite.png" alt="logo humidité" id="humid3"> 20%</li>
                         </ul>
                     </div>
                     <div class="d-none d-lg-block col-lg-1 m-auto">
                         <img class="img-fluid" src="img/backArrow.png" alt="flèche vers la droite">
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="d-none d-lg-block line mt-3 mb-3"></div>
 
@@ -262,6 +265,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
